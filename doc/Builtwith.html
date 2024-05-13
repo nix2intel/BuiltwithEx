@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.32.2">
+    <meta name="project" content="builtwith v0.1.0">
+
+
+    <title>Builtwith — builtwith v0.1.0</title>
+    <link rel="stylesheet" href="dist/html-elixir-CDEHVNM4.css" />
+
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-K7URE6B4.js"></script>
+    <script src="dist/sidebar_items-89068F50.js"></script>
+    <script src="docs_config.js"></script>
+    <script async src="dist/html-BHYOTRCH.js"></script>
+
+
+  </head>
+  <body data-type="modules" class="page-module">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+        <a href="Builtwith.html" class="sidebar-projectImage">
+          <img src="assets/logo.png" alt="builtwith" />
+        </a>
+
+      <div>
+        <a href="Builtwith.html" class="sidebar-projectName" translate="no">
+builtwith
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+Pages
+        </button>
+      </li>
+
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
+
+
+    </ul>
+  </div>
+
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
+
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+</nav>
+
+<main class="content">
+  <output role="status" id="toast"></output>
+
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of builtwith</span>
+            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </label>
+          <button type="submit" class="search-button" aria-label="Submit Search">
+            <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
+          </button>
+          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+            <i class="ri-close-line ri-lg" title="Cancel search"></i>
+          </button>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <h1>
+
+      <a href="https://github.com/nix2intel/builtwith/blob/main/lib/builtwith.ex#L1" title="View Source" class="icon-action" rel="help">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+    <span translate="no">Builtwith</span> 
+    <small class="app-vsn" translate="no">(builtwith v0.1.0)</small>
+
+  </h1>
+
+
+    <section id="moduledoc">
+<p>An unofficial module for interacting with the Builtwith API.</p><p>Please note: This module is not an official Builtwith API client and is not affiliated with or endorsed by Builtwith. It is a third-party implementation.</p><p>This module provides functions to make requests to the Builtwith API and extract specific data from the JSON response.</p><p>To use this module, you need to have a valid Builtwith API key (bwpass).</p>
+    </section>
+
+</div>
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Summary</span>
+    </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_attributes/1" data-no-tooltip translate="no">get_attributes(builtwithjson)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>This function takes a list of JSON objects (results from a Builtwith API request) and returns the value of the 'Attributes' field from the first object where this field is found.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_db_status/1" data-no-tooltip translate="no">get_db_status(builtwithjson)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>This function takes a JSON object and returns the 'IsDB' field from the 'Result' field of the JSON object.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_lookup/1" data-no-tooltip translate="no">get_lookup(builtwithjson)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>This function takes the result of a Builtwith API request and returns the value of the 'Lookup' field, which is the domain being looked up.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_meta/1" data-no-tooltip translate="no">get_meta(builtwithjson)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>This function takes a list of JSON objects (results from a Builtwith API request) and returns the value of the 'Meta' field from the first object where this field is found.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_results/1" data-no-tooltip translate="no">get_results(response)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_spend/1" data-no-tooltip translate="no">get_spend(builtwithjson)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>This function takes a list of JSON objects (results from a Builtwith API request) and returns the value of the 'Spend' field from the 'Result' object of the first JSON object where the 'Result' field is found.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_subdomains/1" data-no-tooltip translate="no">get_subdomains(builtwithjson)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>This function takes a list of JSON objects (results from a Builtwith API request) and returns a list of all 'SubDomain' values found in the 'Paths' field of the 'Result' object.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_technologies/1" data-no-tooltip translate="no">get_technologies(builtwithjson)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>This function takes a list of JSON objects (results from a Builtwith API request) and returns a map where the keys are the 'Tag' values and the values are lists of technologies with that 'Tag' value, extracted from the 'Technologies' field in the 'Paths' array of the 'Result' object.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#make_request/1" data-no-tooltip translate="no">make_request(list)</a>
+
+      </div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="get_attributes/1">
+
+  <div class="detail-header">
+    <a href="#get_attributes/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_attributes(builtwithjson)</h1>
+
+      <a href="https://github.com/nix2intel/builtwith/blob/main/lib/builtwith.ex#L109" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>This function takes a list of JSON objects (results from a Builtwith API request) and returns the value of the 'Attributes' field from the first object where this field is found.</p><h2 id="get_attributes/1-examples" class="section-heading">
+  <a href="#get_attributes/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Builtwith</span><span class="o">.</span><span class="n">get_attributes</span><span class="p" data-group-id="5126558363-1">(</span><span class="p" data-group-id="5126558363-2">[</span><span class="p" data-group-id="5126558363-3">%{</span><span class="s">&quot;Attributes&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="5126558363-4">%{</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p" data-group-id="5126558363-4">}</span><span class="p" data-group-id="5126558363-3">}</span><span class="p" data-group-id="5126558363-2">]</span><span class="p" data-group-id="5126558363-1">)</span><span class="w">
+</span><span class="p" data-group-id="5126558363-5">%{</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p" data-group-id="5126558363-5">}</span></code></pre><p>If the 'Attributes' field is not found in any of the JSON objects in the list, the function returns <code class="inline">nil</code>.</p>
+  </section>
+</section>
+<section class="detail" id="get_db_status/1">
+
+  <div class="detail-header">
+    <a href="#get_db_status/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_db_status(builtwithjson)</h1>
+
+      <a href="https://github.com/nix2intel/builtwith/blob/main/lib/builtwith.ex#L42" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>This function takes a JSON object and returns the 'IsDB' field from the 'Result' field of the JSON object.</p><h2 id="get_db_status/1-examples" class="section-heading">
+  <a href="#get_db_status/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Builtwith</span><span class="o">.</span><span class="n">get_db_status</span><span class="p" data-group-id="3169871755-1">(</span><span class="p" data-group-id="3169871755-2">[</span><span class="p" data-group-id="3169871755-3">%{</span><span class="s">&quot;Result&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="3169871755-4">%{</span><span class="s">&quot;IsDB&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="no">true</span><span class="p" data-group-id="3169871755-4">}</span><span class="p" data-group-id="3169871755-3">}</span><span class="p" data-group-id="3169871755-2">]</span><span class="p" data-group-id="3169871755-1">)</span><span class="w">
+</span><span class="no">true</span></code></pre><p>Possible return values are <code class="inline">true</code>, <code class="inline">false</code>, <code class="inline">&quot;Misleading&quot;</code>, or <code class="inline">nil</code> if the 'Result' or 'IsDB' field is not found.</p>
+  </section>
+</section>
+<section class="detail" id="get_lookup/1">
+
+  <div class="detail-header">
+    <a href="#get_lookup/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_lookup(builtwithjson)</h1>
+
+      <a href="https://github.com/nix2intel/builtwith/blob/main/lib/builtwith.ex#L65" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>This function takes the result of a Builtwith API request and returns the value of the 'Lookup' field, which is the domain being looked up.</p><h2 id="get_lookup/1-examples" class="section-heading">
+  <a href="#get_lookup/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="5697434844-1">[</span><span class="p" data-group-id="5697434844-2">%{</span><span class="s">&quot;Lookup&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;example.com&quot;</span><span class="p" data-group-id="5697434844-2">}</span><span class="p" data-group-id="5697434844-1">]</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Builtwith</span><span class="o">.</span><span class="n">get_lookup</span><span class="p" data-group-id="5697434844-3">(</span><span class="n">results</span><span class="p" data-group-id="5697434844-3">)</span><span class="w">
+</span><span class="s">&quot;example.com&quot;</span></code></pre><p>If the 'Lookup' field is not found, the function returns <code class="inline">nil</code>.</p>
+  </section>
+</section>
+<section class="detail" id="get_meta/1">
+
+  <div class="detail-header">
+    <a href="#get_meta/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_meta(builtwithjson)</h1>
+
+      <a href="https://github.com/nix2intel/builtwith/blob/main/lib/builtwith.ex#L130" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>This function takes a list of JSON objects (results from a Builtwith API request) and returns the value of the 'Meta' field from the first object where this field is found.</p><h2 id="get_meta/1-examples" class="section-heading">
+  <a href="#get_meta/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Builtwith</span><span class="o">.</span><span class="n">get_meta</span><span class="p" data-group-id="5021869082-1">(</span><span class="p" data-group-id="5021869082-2">[</span><span class="p" data-group-id="5021869082-3">%{</span><span class="s">&quot;Meta&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="5021869082-4">%{</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p" data-group-id="5021869082-4">}</span><span class="p" data-group-id="5021869082-3">}</span><span class="p" data-group-id="5021869082-2">]</span><span class="p" data-group-id="5021869082-1">)</span><span class="w">
+</span><span class="p" data-group-id="5021869082-5">%{</span><span class="s">&quot;key&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p" data-group-id="5021869082-5">}</span></code></pre><p>  If the 'Meta' field is not found in any of the JSON objects in the list, the function returns <code class="inline">nil</code>.</p>
+  </section>
+</section>
+<section class="detail" id="get_results/1">
+
+  <div class="detail-header">
+    <a href="#get_results/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_results(response)</h1>
+
+      <a href="https://github.com/nix2intel/builtwith/blob/main/lib/builtwith.ex#L26" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="get_spend/1">
+
+  <div class="detail-header">
+    <a href="#get_spend/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_spend(builtwithjson)</h1>
+
+      <a href="https://github.com/nix2intel/builtwith/blob/main/lib/builtwith.ex#L149" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>This function takes a list of JSON objects (results from a Builtwith API request) and returns the value of the 'Spend' field from the 'Result' object of the first JSON object where the 'Result' field is found.</p><h2 id="get_spend/1-examples" class="section-heading">
+  <a href="#get_spend/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Builtwith</span><span class="o">.</span><span class="n">get_spend</span><span class="p" data-group-id="6144853886-1">(</span><span class="p" data-group-id="6144853886-2">[</span><span class="p" data-group-id="6144853886-3">%{</span><span class="s">&quot;Result&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="6144853886-4">%{</span><span class="s">&quot;Spend&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">100</span><span class="p" data-group-id="6144853886-4">}</span><span class="p" data-group-id="6144853886-3">}</span><span class="p" data-group-id="6144853886-2">]</span><span class="p" data-group-id="6144853886-1">)</span><span class="w">
+</span><span class="mi">100</span></code></pre><p>If the 'Result' or 'Spend' field is not found in any of the JSON objects in the list, the function returns <code class="inline">nil</code>.</p>
+  </section>
+</section>
+<section class="detail" id="get_subdomains/1">
+
+  <div class="detail-header">
+    <a href="#get_subdomains/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_subdomains(builtwithjson)</h1>
+
+      <a href="https://github.com/nix2intel/builtwith/blob/main/lib/builtwith.ex#L85" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>This function takes a list of JSON objects (results from a Builtwith API request) and returns a list of all 'SubDomain' values found in the 'Paths' field of the 'Result' object.</p><h2 id="get_subdomains/1-examples" class="section-heading">
+  <a href="#get_subdomains/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Builtwith</span><span class="o">.</span><span class="n">get_subdomains</span><span class="p" data-group-id="2596136557-1">(</span><span class="p" data-group-id="2596136557-2">[</span><span class="p" data-group-id="2596136557-3">%{</span><span class="s">&quot;Result&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="2596136557-4">%{</span><span class="s">&quot;Paths&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="2596136557-5">[</span><span class="p" data-group-id="2596136557-6">%{</span><span class="s">&quot;SubDomain&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;sub1.example.com&quot;</span><span class="p" data-group-id="2596136557-6">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2596136557-7">%{</span><span class="s">&quot;SubDomain&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;sub2.example.com&quot;</span><span class="p" data-group-id="2596136557-7">}</span><span class="p" data-group-id="2596136557-5">]</span><span class="p" data-group-id="2596136557-4">}</span><span class="p" data-group-id="2596136557-3">}</span><span class="p" data-group-id="2596136557-2">]</span><span class="p" data-group-id="2596136557-1">)</span><span class="w">
+</span><span class="p" data-group-id="2596136557-8">[</span><span class="s">&quot;sub1.example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sub2.example.com&quot;</span><span class="p" data-group-id="2596136557-8">]</span></code></pre><p>If no 'SubDomain' values are found, or if the 'Result' or 'Paths' fields are not found, the function returns <code class="inline">nil</code>.</p>
+  </section>
+</section>
+<section class="detail" id="get_technologies/1">
+
+  <div class="detail-header">
+    <a href="#get_technologies/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_technologies(builtwithjson)</h1>
+
+      <a href="https://github.com/nix2intel/builtwith/blob/main/lib/builtwith.ex#L170" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>This function takes a list of JSON objects (results from a Builtwith API request) and returns a map where the keys are the 'Tag' values and the values are lists of technologies with that 'Tag' value, extracted from the 'Technologies' field in the 'Paths' array of the 'Result' object.</p><h2 id="get_technologies/1-examples" class="section-heading">
+  <a href="#get_technologies/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Builtwith</span><span class="o">.</span><span class="n">get_technologies</span><span class="p" data-group-id="8558611217-1">(</span><span class="p" data-group-id="8558611217-2">[</span><span class="p" data-group-id="8558611217-3">%{</span><span class="s">&quot;Result&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="8558611217-4">%{</span><span class="s">&quot;Paths&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="8558611217-5">[</span><span class="p" data-group-id="8558611217-6">%{</span><span class="s">&quot;Technologies&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="8558611217-7">[</span><span class="p" data-group-id="8558611217-8">%{</span><span class="s">&quot;Tag&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;tag1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;tech1&quot;</span><span class="p" data-group-id="8558611217-8">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8558611217-9">%{</span><span class="s">&quot;Tag&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;tag1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;tech2&quot;</span><span class="p" data-group-id="8558611217-9">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8558611217-10">%{</span><span class="s">&quot;Tag&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;tag2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;tech3&quot;</span><span class="p" data-group-id="8558611217-10">}</span><span class="p" data-group-id="8558611217-7">]</span><span class="p" data-group-id="8558611217-6">}</span><span class="p" data-group-id="8558611217-5">]</span><span class="p" data-group-id="8558611217-4">}</span><span class="p" data-group-id="8558611217-3">}</span><span class="p" data-group-id="8558611217-2">]</span><span class="p" data-group-id="8558611217-1">)</span><span class="w">
+</span><span class="p" data-group-id="8558611217-11">%{</span><span class="s">&quot;tag1&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="8558611217-12">[</span><span class="p" data-group-id="8558611217-13">%{</span><span class="s">&quot;Tag&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;tag1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;tech1&quot;</span><span class="p" data-group-id="8558611217-13">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8558611217-14">%{</span><span class="s">&quot;Tag&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;tag1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;tech2&quot;</span><span class="p" data-group-id="8558611217-14">}</span><span class="p" data-group-id="8558611217-12">]</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tag2&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="8558611217-15">[</span><span class="p" data-group-id="8558611217-16">%{</span><span class="s">&quot;Tag&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;tag2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Name&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;tech3&quot;</span><span class="p" data-group-id="8558611217-16">}</span><span class="p" data-group-id="8558611217-15">]</span><span class="p" data-group-id="8558611217-11">}</span></code></pre><p>If the 'Result', 'Paths', or 'Technologies' field is not found, or if no technologies are present, the function returns an empty map.</p>
+  </section>
+</section>
+<section class="detail" id="make_request/1">
+
+  <div class="detail-header">
+    <a href="#make_request/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">make_request(list)</h1>
+
+      <a href="https://github.com/nix2intel/builtwith/blob/main/lib/builtwith.ex#L12" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
+    <footer class="footer">
+      <p>
+
+        <span class="line">
+          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+            Search HexDocs
+          </button>
+
+            <a href="builtwith.epub" title="ePub version">
+              Download ePub version
+            </a>
+
+        </span>
+      </p>
+
+      <p class="built-using">
+        Built using
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.32.2) for the
+
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+      </p>
+
+    </footer>
+  </div>
+</main>
+</div>
+
+
+  </body>
+</html>
