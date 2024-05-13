@@ -1,14 +1,11 @@
-<!-- livebook:{"app_settings":{"slug":"jklkjljsdlkjlksafjlkjF"},"autosave_interval_s":60} -->
+<!-- livebook:{"app_settings":{"slug":""},"autosave_interval_s":60} -->
 
 # Builtwith
 
 ```elixir
 Mix.install([
   {:httpoison, "~> 2.2"},
-  {:kino_explorer, "~> 0.1.11"},
-  {:kino_maplibre, "~> 0.1.10"},
   {:jason, "~> 1.4"},
-  {:kino_vega_lite, "~> 0.1.10"},
   {:builtwith, "~> 0.1.1"}
 ])
 ```
@@ -58,4 +55,4 @@ Builtwith.get_results(webresponse)
 |> Map.get("SalesRevenue")
 ```
 
-<!-- livebook:{"offset":1030,"stamp":{"token":"XCP.hC8XSjjU7U7O1UHG32F9PZU4JVCNLBfV7j38qBQfo7_4dZjDQtUdrPBW2dXauCu2cBJpwNITo_nLVX5n9wAu-nVvGf8jbeUV-8iorXN3WvnbB_3H","version":2}} -->
+<!-- livebook:{"offset":1030,"stamp":{"token":"","version":2}} -->
