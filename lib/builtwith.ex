@@ -8,12 +8,11 @@ defmodule Builtwith do
 
   To use this module, you need to have a valid Builtwith API key (bwpass).
   """
-  use HTTPoison.Base
 
   def make_request(domain: domain, bwpass: bw_pass) do
     url = "https://api.builtwith.com/v21/api.json?KEY=#{bw_pass}&LOOKUP=#{domain}"
 
-    case get(url) do
+    case HTTPoison.get(url) do
       {:ok, %{status_code: 200, body: body}} ->
         {:ok, Jason.decode!(body)}
       {:ok, %{status_code: status_code}} ->
@@ -52,17 +51,17 @@ defmodule Builtwith do
       end
   end
 
-@doc """
-This function takes the result of a Builtwith API request and returns the value of the 'Lookup' field, which is the domain being looked up.
+  @doc """
+  This function takes the result of a Builtwith API request and returns the value of the 'Lookup' field, which is the domain being looked up.
 
-## Examples
+  ## Examples
 
-    iex> results = [%{"Lookup" => "example.com"}]
-    iex> Builtwith.get_lookup(results)
-    "example.com"
+      iex> results = [%{"Lookup" => "example.com"}]
+      iex> Builtwith.get_lookup(results)
+      "example.com"
 
-If the 'Lookup' field is not found, the function returns `nil`.
-"""
+  If the 'Lookup' field is not found, the function returns `nil`.
+  """
   def get_lookup(builtwithjson)do
     get_results(builtwithjson)
     |> Enum.find(fn map -> Map.has_key?(map, "Lookup") end)
@@ -127,7 +126,7 @@ If the 'Lookup' field is not found, the function returns `nil`.
       %{"key" => "value"}
 
     If the 'Meta' field is not found in any of the JSON objects in the list, the function returns `nil`.
-    """
+  """
   def get_meta(builtwithjson) do
         get_results(builtwithjson)
         |> Enum.find(fn map -> Map.has_key?(map, "Meta") end)

@@ -1,0 +1,61 @@
+<!-- livebook:{"app_settings":{"slug":"jklkjljsdlkjlksafjlkjF"},"autosave_interval_s":60} -->
+
+# Builtwith
+
+```elixir
+Mix.install([
+  {:httpoison, "~> 2.2"},
+  {:kino_explorer, "~> 0.1.11"},
+  {:kino_maplibre, "~> 0.1.10"},
+  {:jason, "~> 1.4"},
+  {:kino_vega_lite, "~> 0.1.10"},
+  {:builtwith, "~> 0.1.1"}
+])
+```
+
+## Section
+
+```elixir
+bw_pass = System.fetch_env!("LB_BUILTWITH")
+domain = "example.com"
+```
+
+```elixir
+webresponse = Builtwith.make_request(domain: domain, bwpass: bw_pass)
+```
+
+```elixir
+Builtwith.get_lookup(webresponse)
+```
+
+```elixir
+Builtwith.get_meta(webresponse)
+```
+
+```elixir
+Builtwith.get_attributes(webresponse)
+```
+
+```elixir
+Builtwith.get_technologies(webresponse) |> Map.keys()
+```
+
+```elixir
+Builtwith.get_technologies(webresponse) |> Map.get("Web Server")
+```
+
+```elixir
+Builtwith.get_spend(webresponse)
+```
+
+```elixir
+Builtwith.get_db_status(webresponse)
+```
+
+```elixir
+Builtwith.get_results(webresponse)
+|> Enum.find(fn map -> Map.has_key?(map, "SalesRevenue") end)
+|> Map.get("SalesRevenue")
+```
+
+<!-- livebook:{"offset":1030,"stamp":{"token":"XCP.hC8XSjjU7U7O1UHG32F9PZU4JVCNLBfV7j38qBQfo7_4dZjDQtUdrPBW2dXauCu2cBJpwNITo_nLVX5n9wAu-nVvGf8jbeUV-8iorXN3WvnbB_3H","version":2}} -->
